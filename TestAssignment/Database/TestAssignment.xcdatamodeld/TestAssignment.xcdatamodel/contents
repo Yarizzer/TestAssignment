@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20B50" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AlbumEntity" representedClassName="AlbumEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="itemEntityRelation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="albumEntityRelation" inverseEntity="ItemEntity"/>
+    </entity>
+    <entity name="ImageEntity" representedClassName="ImageEntity" syncable="YES">
+        <attribute name="imageData" attributeType="Binary"/>
+        <attribute name="url" attributeType="String"/>
+    </entity>
+    <entity name="ItemEntity" representedClassName="ItemEntity" syncable="YES">
+        <attribute name="albumID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="thumbnailURL" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="albumEntityRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AlbumEntity" inverseName="itemEntityRelation" inverseEntity="AlbumEntity"/>
+    </entity>
+    <elements>
+        <element name="AlbumEntity" positionX="-99.39599609375" positionY="42.19390869140625" width="128" height="89"/>
+        <element name="ImageEntity" positionX="-2.722900390625" positionY="-159.1317749023437" width="128" height="59"/>
+        <element name="ItemEntity" positionX="243.14404296875" positionY="1.3984375" width="128" height="119"/>
+    </elements>
+</model>
